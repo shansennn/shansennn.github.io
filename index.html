@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<h1>Welcome to Telegram Mini App!</h1>
+<p id="username">Loading...</p>
+
+<script>
+    Telegram.WebApp.ready();
+
+    // Получение данных о пользователе
+    const user = Telegram.WebApp.initDataUnsafe.user;
+    if (user) {
+        document.getElementById('username').innerText = Hello, ${user.first_name}!;
+    } else {
+        document.getElementById('username').innerText = 'Hello, guest!';
+    }
+</script>
+</body>
+</html>
